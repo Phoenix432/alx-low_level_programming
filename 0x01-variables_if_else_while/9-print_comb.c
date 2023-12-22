@@ -1,30 +1,30 @@
 #include<stdio.h>
 
 /**
- * main - Entry point
- *
- * Description: print 0, 1, - 9
- *
- * Return: Always 0 (Success)
+* main - Entry point
+*
+* Description - print 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+*
+* Return: 0 (Succes)
 */
 
 int main(void)
 {
-	int digit = 0;
+	int n = 48; /*48; decimal rep of 0*/
 
-	while (digit <= 9)
+	while (n <= 57)
 	{
-		putchar(digit + 48);
-
-		if (digit != 9)
+		putchar(n);
+		if (n != 57)
 		{
 			putchar(',');
 			putchar(' ');
 		}
-
-		digit++;
+		n++;
 	}
+
 	putchar('\n');
 
 	return (0);
 }
+
