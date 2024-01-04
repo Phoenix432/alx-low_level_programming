@@ -27,7 +27,7 @@ for (i = 0; i <= 9; i++)
 		}
 		if (j != 9)
 		{
-			_putchar('.');
+			_putchar(',');
 			_putchar(' ');
 		}
 	}
