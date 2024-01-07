@@ -2,15 +2,15 @@
 
 
 /**
-* FizzBuzz - multiples of three print Fizz ,
-*   multiples of five print Buzz
-*  both three and five print FizzBuzz.
-*  separated by a space
+* main - multiples of three print Fizz ,
+* 		 multiples of five print Buzz
+* 		 both three and five print FizzBuzz.
+* 		 separated by a space
 * Return: 0
 */
 
 
-void FizzBuzz(void)
+void main(void)
 {
 	int i;
 
