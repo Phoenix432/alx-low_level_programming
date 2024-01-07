@@ -3,14 +3,14 @@
 
 /**
 * main - multiples of three print Fizz ,
-* 		 multiples of five print Buzz
-* 		 both three and five print FizzBuzz.
-* 		 separated by a space
+*	multiples of five print Buzz
+*	both three and five print FizzBuzz.
+*	separated by a space
 * Return: 0
 */
 
 
-void main(void)
+int main(void)
 {
 	int i;
 
@@ -26,7 +26,7 @@ void main(void)
 			printf("%d ", i);
 	}
 	printf("\n");
-
+	return (0);
 }
 
 
