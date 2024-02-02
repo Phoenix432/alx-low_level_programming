@@ -3,25 +3,26 @@
 
 /**
  * print_numbers - prints numbers with separator
- * @separator: string to be printed between numbers
- * @n: the number of arguments passed to the function
- * @...: the integers to print
+ * @separator: separator to be printed between numbers
+ * @n:  number of arguments
+ * @...: integers to print
  *
  * Return: void
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	int i = n;
-	va_list ap;
+	unsigned int i;
+	va_list args;
 
-	if (n == 0)
+	va_start(args, n);
+
+	for (i = 0; i < n; i++)
 	{
-		printf("\n");
-		return;
+		printf("%d", va_arg(args, int));
+		if (separator && i != n - 1)
+			printf("%s", separator);
 	}
-	va_start(ap, n);
-	while (i--)
-		printf("%d%s", va_arg(ap, int),
-			i ? (separator ? separator : "") : "\n");
-	va_end(ap);
+
+	va_end(args);
+	printf("\n");
 }
