@@ -2,7 +2,7 @@
 
 
 /**
- * print_strings - prints strings, followed by a new line.
+ * print_strings - prints strings followed by a new line.
  * @separator: string separator
  * @n: number of arguments
  * @...: the strings to print
@@ -11,18 +11,23 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	int i = n;
-	char *s;
-	va_list ap;
+	unsigned int i;
+	char *str;
+	va_list args;
 
-	if (n == 0)
+	va_start(args, n);
+
+	for (i = 0; i < n; i++)
 	{
-		printf("\n");
-		return;
+		str = va_arg(args, char *);
+		if (str == NULL)
+			printf("(nil)");
+		else
+			printf("%s", str);
+
+		if (separator && i != n - 1)
+		printf("%s", separator);
 	}
-	va_start(ap, n);
-	while (i--)
-		printf("%s%s", (s = va_arg(ap, char *)) ? s : "(nil)",
-			i ? (separator ? separator : "") : "\n");
-	va_end(ap);
+	va_end(args);
+	printf("\n");
 }
